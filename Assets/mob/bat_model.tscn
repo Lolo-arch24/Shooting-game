@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7325nx6llh75"]
+
+[ext_resource type="PackedScene" uid="uid://csnwlu0t8nnmp" path="res://Assets/mob/bat/bat_model.glb" id="1_vmuk1"]
+
+[node name="bat_model" instance=ExtResource("1_vmuk1")]
