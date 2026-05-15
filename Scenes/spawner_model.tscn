@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://bt4ug32hxedq3"]
+
+[ext_resource type="PackedScene" uid="uid://c2pd6qtlkx8sr" path="res://Assets/mob/spawner/spawner_model.glb" id="1_1l6br"]
+[ext_resource type="Shader" uid="uid://cfnwyva3u4qeb" path="res://Assets/mob/spawner/spawner_halo.gdshader" id="2_n0qxd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jsu32"]
+render_priority = 0
+shader = ExtResource("2_n0qxd")
+shader_parameter/color = Color(0.6432291, 0, 0.48635915, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gowe1"]
+albedo_color = Color(1, 0.34843773, 0.72394717, 1)
+metallic = 0.64
+metallic_specular = 0.81
+roughness = 0.44
+rim_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qg04e"]
+albedo_color = Color(0.5807291, 0.5807291, 0.5807291, 1)
+metallic = 0.66
+roughness = 0.49
+rim_enabled = true
+
+[sub_resource type="Animation" id="Animation_1l6br"]
+resource_name = "rotation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n0qxd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Top:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsu32"]
+_data = {
+&"RESET": SubResource("Animation_n0qxd"),
+&"rotation": SubResource("Animation_1l6br")
+}
+
+[node name="spawner_model" instance=ExtResource("1_1l6br")]
+
+[node name="halo" parent="." index="0"]
+material_override = SubResource("ShaderMaterial_jsu32")
+
+[node name="Body" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gowe1")
+
+[node name="Top" parent="." index="2"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0.78395706, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_qg04e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_jsu32")
+}
+autoplay = "rotation"

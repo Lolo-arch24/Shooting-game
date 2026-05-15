@@ -1,0 +1,206 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyk3n12uftc8t"]
+
+[ext_resource type="Script" uid="uid://dvgto5qpvyi7a" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://bgd2gq310i0ie" path="res://shooting game screenshot.png" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://d2m5o1y0l6xn7" path="res://Fonts/PermanentMarker-Regular.ttf" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://d3ft4i7kpvm6h" path="res://Scripts/full_screen_control.gd" id="4_ce3w2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48xlc"]
+texture = ExtResource("1_28flt")
+modulate_color = Color(0.15885419, 0.15885419, 0.15885419, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(0, 0.6878871, 0.7473959, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 7
+shadow_offset = Vector2(0, 3.71)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0, 0.2743919, 0.2994792, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 7
+shadow_offset = Vector2(0, 3.71)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
+bg_color = Color(0, 0.34597236, 0.3776042, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 7
+shadow_offset = Vector2(0, 3.71)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ehe0")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_48xlc")
+
+[node name="MainButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = -56.0
+offset_right = 233.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Options"
+
+[node name="Button3" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -382.0
+offset_top = -281.0
+offset_right = 382.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.82794756, 0.9036458, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.03137255, 0.03137255, 1)
+theme_override_constants/shadow_offset_y = 11
+theme_override_fonts/font = ExtResource("2_48xlc")
+theme_override_font_sizes/font_size = 99
+text = "Too Many Bats!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.0
+offset_top = -150.0
+offset_right = 274.0
+offset_bottom = 264.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 0
+offset_right = 546.0
+offset_bottom = 85.5
+theme_override_colors/font_color = Color(0, 0.64265174, 0.7005209, 1)
+theme_override_font_sizes/font_size = 32
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Options"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 321.0
+offset_right = 475.0
+offset_bottom = 399.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_48xlc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ehe0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_48xlc")
+text = "Back"
+
+[node name="FullScreenControl" type="CheckButton" parent="Options"]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 74.0
+offset_right = 469.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 26
+text = "Fullscreen"
+script = ExtResource("4_ce3w2")
+
+[node name="Label2" type="Label" parent="Options"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 101.0
+offset_right = 548.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 30
+text = "There's nothing here for now :) "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="Options/FullScreenControl" to="Options/FullScreenControl" method="_on_toggled"]

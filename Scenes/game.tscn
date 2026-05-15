@@ -1,0 +1,293 @@
+[gd_scene load_steps=11 format=3 uid="uid://buluaa2u3xeg5"]
+
+[ext_resource type="Material" uid="uid://bdymrch8nnxhc" path="res://Assets/level/platform.tres" id="1_3dryh"]
+[ext_resource type="Script" uid="uid://bv5m4mlac2o3t" path="res://Scripts/game.gd" id="1_wowpa"]
+[ext_resource type="Material" uid="uid://cuwlfl2ee1lnh" path="res://Assets/level/bridge.tres" id="2_wowpa"]
+[ext_resource type="PackedScene" uid="uid://dkeudyurrsgjo" path="res://Scenes/player.tscn" id="3_i6g32"]
+[ext_resource type="PackedScene" uid="uid://jw4ftdkctxws" path="res://Scenes/mob_spawner_3d.tscn" id="4_3dryh"]
+
+[sub_resource type="Environment" id="Environment_80nbo"]
+background_mode = 1
+background_color = Color(0.21432328, 0.6630334, 0.89192116, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8411458, 0.7357374, 0.6351937, 1)
+tonemap_mode = 2
+tonemap_exposure = 1.23
+tonemap_white = 0.77
+fog_enabled = true
+fog_light_color = Color(0.3070799, 0.50448847, 0.6744791, 1)
+fog_density = 0.0055
+fog_height = -0.45
+fog_height_density = 0.3517
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6g32"]
+font_size = 48
+font_color = Color(0.6405872, 0.99502635, 1, 1)
+outline_size = 12
+outline_color = Color(0.021684367, 0.09114581, 0.076985516, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wowpa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wowpa"]
+font_size = 33
+font_color = Color(0.6392157, 0.99607843, 1, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1l0tm"]
+font_size = 23
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_wowpa")
+
+[node name="Player" parent="." instance=ExtResource("3_i6g32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Floor" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.9, 0)
+use_collision = true
+size = Vector3(10, 12, 10)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.9, -16.5)
+use_collision = true
+size = Vector3(14, 12, 17)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, -5.9, -33.5)
+use_collision = true
+size = Vector3(14, 12, 17)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5.9, -28.5)
+use_collision = true
+size = Vector3(14, 12, 17)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5.9, 0.5)
+use_collision = true
+size = Vector3(14, 12, 17)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1, -5.9, 0.5)
+use_collision = true
+size = Vector3(14, 12, 17)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -5.9, -38.5)
+use_collision = true
+size = Vector3(9, 12, 13)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.9000001, -30.5)
+use_collision = true
+size = Vector3(5.4, 2, 1.4)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.9000001, -27.5)
+use_collision = true
+size = Vector3(5.4, 2, 1.4)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, -0.9000001, -27.5)
+use_collision = true
+size = Vector3(5.4, 2, 1.4)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5, -0.9000001, -41.5)
+use_collision = true
+size = Vector3(3, 2, 7)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.5, -0.9000001, -50.5)
+use_collision = true
+size = Vector3(3, 2, 2)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 22.5, -0.9000001, -50.5)
+use_collision = true
+size = Vector3(3, 2, 2)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 26.5, -0.9000001, -50.5)
+use_collision = true
+size = Vector3(3, 2, 2)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 45.75, -0.9000001, -33.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 50.75, -0.9000001, -17)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 50.75, -0.9000001, -13.1)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 50.75, -0.9000001, -9.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 38.75, -0.9000001, -33.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 35.75, -0.9000001, 2.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32.75, -0.9000001, 2.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32.95, -0.9000001, 2.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.05, -0.9000001, 2.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.549999, -0.9000001, 1.5000002)
+use_collision = true
+size = Vector3(9, 2, 3)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 42.15, -0.9000001, -33.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 56.15, -0.9000001, -33.5)
+use_collision = true
+size = Vector3(6, 2, 1.5)
+material = ExtResource("1_3dryh")
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, -0.9000001, -49)
+use_collision = true
+size = Vector3(2, 2, 2)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -0.9000001, -44.8)
+use_collision = true
+size = Vector3(3, 2, 2)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.25, -0.9000001, -50.5)
+use_collision = true
+size = Vector3(3.5, 2, 2)
+material = ExtResource("2_wowpa")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, -5.9, -46.5)
+use_collision = true
+size = Vector3(9, 12, 13)
+material = ExtResource("1_3dryh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8660254, -0.482963, 0.1294095, 0, 0.258819, 0.9659258, -0.50000006, -0.8365163, 0.22414382, 0, 6.7218184, 2)
+shadow_enabled = true
+shadow_normal_bias = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_80nbo")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 32.0
+offset_top = 28.0
+offset_right = 244.0
+offset_bottom = 105.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_i6g32")
+
+[node name="Killzone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.108112, -5.896202, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape3D_wowpa")
+
+[node name="MobSpawners" type="Node" parent="."]
+
+[node name="MobSpawner3D" parent="MobSpawners" instance=ExtResource("4_3dryh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.567715)
+
+[node name="MobSpawner3D2" parent="MobSpawners" instance=ExtResource("4_3dryh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.227833, 0.19941473, -28.348923)
+
+[node name="Time" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 574.0
+offset_top = 16.0
+offset_right = 660.0
+offset_bottom = 39.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_wowpa")
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 120.0
+one_shot = true
+
+[node name="Congrats" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -16.0
+offset_right = 149.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+label_settings = SubResource("LabelSettings_1l0tm")
+
+[connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="mob_spawned" from="MobSpawners/MobSpawner3D" to="." method="_on_mob_spawner_3d_mob_spawned"]
+[connection signal="mob_spawned" from="MobSpawners/MobSpawner3D2" to="." method="_on_mob_spawner_3d_mob_spawned"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
